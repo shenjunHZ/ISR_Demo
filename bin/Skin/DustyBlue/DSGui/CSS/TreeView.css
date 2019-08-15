@@ -1,0 +1,78 @@
+DSGUI--DSTreeView
+{   
+	border-image:url(./Skin/DustyBlue/DSGui/View/TreeView.png);
+	background-color: #2b2f33 ;
+	color: #EEEEEE;
+	border:none;
+	/*整行选中（Branch item）*/
+   	show-decoration-selected: 1 ;
+	font-size: 14px;
+}
+
+DSGUI--DSTreeView::branch
+{ 
+	image:none;
+	background-color: transparent; 
+}
+DSGUI--DSTreeView::indicator
+{
+    width:20px;
+    height:20px;
+}
+
+DSGUI--DSTreeView::item {
+	background-color: transparent;
+	height:30px;
+	color: #abb2bd;
+}
+
+DSGUI--DSTreeView::item:hover ,DSGUI--DSTreeView::branch:hover{
+	background-color:#35393e;
+}
+
+DSGUI--DSTreeView::item:selected ,DSGUI--DSTreeView::branch:selected{
+    color: #FFFFFF;
+	background-color:#595f69;
+}
+
+DSGUI--DSTreeView::branch:closed:has-children:!has-siblings,
+DSGUI--DSTreeView::branch:closed:has-children:has-siblings
+{
+	image: url(./Skin/DustyBlue/DSGui/View/normal_n.png);
+}
+
+DSGUI--DSTreeView::branch:closed:has-children:!has-siblings:hover,
+DSGUI--DSTreeView::branch:closed:has-children:has-siblings:hover
+{
+	image: url(./Skin/DustyBlue/DSGui/View/normal_h.png);
+}
+DSGUI--DSTreeView::branch:closed:has-children:!has-siblings:pressed,
+DSGUI--DSTreeView::branch:closed:has-children:has-siblings:pressed
+{
+	image: url(./Skin/DustyBlue/DSGui/View/normal_h.png);
+}
+DSGUI--DSTreeView::branch:closed:has-children:!has-siblings:disabled,
+DSGUI--DSTreeView::branch:closed:has-children:has-siblings:disabled
+{
+	image: url(./Skin/DustyBlue/DSGui/View/normal_n.png);
+}
+DSGUI--DSTreeView::branch:open:has-children:!has-siblings,
+DSGUI--DSTreeView::branch:open:has-children:has-siblings
+{
+	image: url(./Skin/DustyBlue/DSGui/View/advanced_n.png);
+}
+DSGUI--DSTreeView::branch:open:has-children:!has-siblings:hover,
+DSGUI--DSTreeView::branch:open:has-children:has-siblings:hover
+{
+	image: url(./Skin/DustyBlue/DSGui/View/advanced_h.png);
+}
+DSGUI--DSTreeView::branch:open:has-children:!has-siblings:pressed,
+DSGUI--DSTreeView::branch:open:has-children:has-siblings:pressed
+{
+	image: url(./Skin/DustyBlue/DSGui/View/normal_h.png);
+}
+DSGUI--DSTreeView::branch:open:has-children:!has-siblings:disabled,
+DSGUI--DSTreeView::branch:open:has-children:has-siblings:disabled
+{
+	image: url(./Skin/DustyBlue/DSGui/View/advanced_n.png);
+}

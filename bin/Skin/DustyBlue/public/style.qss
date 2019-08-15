@@ -1,0 +1,158 @@
+QWidget,
+QDialog,
+QLabel{
+    background-color: transparent;
+    font-size: 12px;
+    color:#ABB2BD;
+}
+
+QToolTip{
+	background-color: #fdfdb0;
+	color:#242424;
+	font-size: 12px;
+}
+
+QScrollBar:horizontal 
+{
+	background:#3d4249;
+	border:none;
+	border-radius:4px;
+    height: 8px;
+	margin: 0px;
+ }
+QScrollBar::handle:horizontal
+{
+    background:#6a7078;
+	border:none;
+	border-radius:4px;
+	min-width:20px;
+}
+QScrollBar::handle:horizontal::pressed
+{
+    background:#8b929b;
+}
+QScrollBar::add-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 0px;	
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal
+{
+    background: none;
+}
+
+QScrollBar:vertical {
+	background:#3d4249;
+	border:none;
+	border-radius:4px;
+    width: 8px;
+	margin: 0px;
+ }
+QScrollBar::handle:vertical
+{
+    background:#6a7078;
+	border:none;
+	border-radius:4px;
+	min-height:20px;
+}
+QScrollBar::handle:vertical::pressed
+{
+    background:#8b929b;
+}
+QScrollBar::sub-line:vertical
+{
+    border-width:0px 0px 0px 0px;
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{ 
+    border-width:0px 0px 0px 0px;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical
+{
+    background: none;
+}
+
+QSlider{
+	background:transparent;
+}
+QSlider::groove:horizontal{
+
+}
+QSlider::handle:horizontal{	
+	background: url(Skin/DustyBlue/public/Handle.png) no-repeat;
+    margin: -3px -4px -3px -1px;
+    width: 16px;
+    height: 16px;
+}
+QSlider::handle:horizontal:hover{
+	background: url(Skin/DustyBlue/public/Handle.png) no-repeat;
+}
+QSlider::handle:horizontal:pressed{
+	background: url(Skin/DustyBlue/public/Handle.png) no-repeat;
+}
+QSlider::handle:horizontal:disabled{
+	background: url(Skin/DustyBlue/public/Handle.png) no-repeat;
+}
+QSlider::add-page:horizontal{
+     background: transparent; 
+}
+QSlider::sub-page:horizontal{
+     background: transparent; 
+}
+
+
+QGroupBox
+{
+  background: #3A3E43;
+  border:1px solid #818796;
+  border-radius: 0px;
+  margin-top: 1ex;
+  color:#eeeeee;
+}
+QGroupBox::title {
+	subcontrol-origin: margin;
+	left: 12px;
+	padding: 0 3px;
+}
+QGroupBox::indicator{
+	width : 16 px;
+	height:	16 px;
+}
+QGroupBox::indicator:checked{
+	image:url("Skin/DustyBlue/public/checkbox/checked.png");
+}
+QGroupBox::indicator:checked:disabled{
+	image:url("Skin/DustyBlue/public/checkbox/checked-disabled.png");
+}
+QGroupBox::indicator::indeterminate:checked{
+	image:url("Skin/DustyBlue/public/checkbox/checked-indeterminate.png");
+}
+QGroupBox::indicator:unchecked{
+	image:url("Skin/DustyBlue/public/checkbox/unchecked.png");
+}
+QGroupBox::indicator:unchecked:disabled{
+	image:url("Skin/DustyBlue/public/checkbox/unchecked-disabled.png");
+}
+QGroupBox::indicator::indeterminate:unchecked{
+	image:url("Skin/DustyBlue/public/checkbox/unchecked-indeterminate.png");
+}
+
+
+

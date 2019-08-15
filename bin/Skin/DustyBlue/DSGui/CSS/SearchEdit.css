@@ -1,0 +1,70 @@
+/* ËÑË÷¿ò±³¾°×´Ì¬ */
+DSGUI--DSSearchEdit  QWidget#widgetBk{
+	border-image: url(./Skin/DustyBlue/DSGui/SearchEdit/search_n.png) 4 4 4 4;
+    border-width:4px 4px 4px 4px;
+}
+/* Êó±êÔÚËÑË÷¿òÉÏÐüÍ£ */
+DSGUI--DSSearchEdit QWidget#widgetBk:hover{  
+	border-image: url(./Skin/DustyBlue/DSGui/SearchEdit/search_h.png) 4 4 4 4;
+	border-width:4px 4px 4px 4px;
+}
+/* Êó±êµã»÷ËÑË÷¿ò */
+DSGUI--DSSearchEdit QWidget#widgetBk:pressed{
+	border-image: url(./Skin/DustyBlue/DSGui/SearchEdit/search_p.png) 4 4 4 4;
+	border-width:4px 4px 4px 4px;
+}
+/* ËÑË÷¿ò»ÒÉ«×´Ì¬ */
+DSGUI--DSSearchEdit QWidget#widgetBk:disabled{
+	border-image: url(./Skin/DustyBlue/DSGui/SearchEdit/search_d.png) 4 4 4 4;
+	border-width:4px 4px 4px 4px;
+}
+
+/* ËÑË÷ÄÚÈÝ±à¼­ */
+DSGUI--DSSearchEdit QLineEdit#editFilter {
+    background-color: transparent;
+    padding-left: 8px;
+    padding-right: 18px;
+    color: #abb2bd;
+	border: none;
+    margin:0;
+}
+
+DSGUI--DSSearchEdit QToolButton#btnClear{
+	max-width:12px;
+	min-width:12px;
+	min-height:12px;
+	max-height:12px;
+    border: none;
+    outline: none;
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/clear_n.png) no-repeat center center;
+}
+DSGUI--DSSearchEdit QToolButton#btnClear:hover{
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/clear_h.png) no-repeat center center;
+}
+DSGUI--DSSearchEdit QToolButton#btnClear:pressed{
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/clear_p.png) no-repeat center center;
+}
+
+/* ¿ªÊ¼ËÑË÷°´Å¥ */
+DSGUI--DSSearchEdit QToolButton#btnSearch{
+	max-width:20px;
+	min-width:20px;
+	min-height:20px;
+	max-height:20px;
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/search_normal.png) no-repeat center center;
+    border:none;
+    outline: none;
+}
+/* Êó±êÔÚ¿ªÊ¼ËÑË÷°´Å¥ÉÏÐüÍ£ */
+DSGUI--DSSearchEdit QToolButton#btnSearch:hover{
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/search_hover.png) no-repeat center center;
+    
+}
+/* Êó±êµã»÷¿ªÊ¼ËÑË÷°´Å¥ */
+DSGUI--DSSearchEdit QToolButton#btnSearch:pressed{
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/search_pressed.png) no-repeat center center;
+}
+/* ¿ªÊ¼ËÑË÷°´Å¥»ÒÉ«×´Ì¬ */
+DSGUI--DSSearchEdit QToolButton#btnSearch:disabled{
+    background: url(./Skin/DustyBlue/DSGui/SearchEdit/search_disabled.png) no-repeat center center;
+}

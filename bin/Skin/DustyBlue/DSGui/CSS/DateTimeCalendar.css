@@ -1,0 +1,33 @@
+/* 日历日期样式 */
+DSGUI--DSDateTimeCalendar {	
+	min-height:28px;
+	max-height:28px;
+	color:#ABB2BD;
+	border-image:url(./Skin/DustyBlue/DSGui/DateTimeCalendar/Calendar-n.png) 0 15 0 2;
+	border-width: 0px 15px 0px 2px;
+	text-align:left;
+	padding-left:4px;
+}
+
+DSGUI--DSDateTimeCalendar:hover 
+{
+	color:#FFFFFF;
+	border-image:url(./Skin/DustyBlue/DSGui/DateTimeCalendar/Calendar-h.png) 0 15 0 2;
+	border-width: 0px 15px 0px 2px;
+}
+
+DSGUI--DSDateTimeCalendar:checked
+{
+	color:#FFFFFF;
+	border-image:url(./Skin/DustyBlue/DSGui/DateTimeCalendar/Calendar-p.png)  0 15 0 2;
+	border-width: 0px 15px 0px 2px;
+}
+
+
+DSGUI--DSDateTimeCalendar:disabled 
+{
+	background-color : #474b54;
+	color:#787878;
+	background-image:url(./Skin/DustyBlue/DSGui/DateTimeCalendar/Calendar-d.png)  0 15 0 2;
+	border-width: 0px 15px 0px 2px;
+}

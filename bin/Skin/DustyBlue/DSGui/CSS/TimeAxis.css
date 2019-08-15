@@ -1,0 +1,46 @@
+DSGUI--DSTimeAxis
+{
+    qproperty-timeFontColor:rgb(185,185,185);
+    qproperty-timeGraduColor:#7B828E;
+    qproperty-timeRegionColor:#2b2f33;
+    qproperty-baseColor:#2b2f33;
+    qproperty-lockRegionColor:rgba(222,54,209,100);
+    qproperty-selectRegionColor:rgba(255,255,255,100);
+	qproperty-selectBorderColor:#0099FF;
+	qproperty-lockBorderColor:#FF0000;
+
+    qproperty-timeRegionHeight:34;
+    qproperty-graduLabelHeight:10;
+    qproperty-playRegionHeight:30;
+    qproperty-utilRegionHeight:16;
+	
+	qproperty-selectOnCursor:url(./Skin/DustyBlue/DSGui/TimeAxis/CutOn.png);
+	qproperty-selectPressedCursor:url(./Skin/DustyBlue/DSGui/TimeAxis/CutPressed.png);
+	qproperty-lockOnCursor:url(./Skin/DustyBlue/DSGui/TimeAxis/LockOn.png);
+	qproperty-lockPressedCursor:url(./Skin/DustyBlue/DSGui/TimeAxis/LockPressed.png);
+}
+
+DSGUI--DSTimeAxis DSGUI--DSPlayIndicator#m_pPlayIndicator
+{
+    qproperty-indent:1;
+	font-size: 12px;
+	font-weight:bold;
+    color:#101011;
+	margin:0;
+	min-width:141px;
+	max-width:141px;
+	min-height:42px;
+	max-height:42px;
+	border-width:2px 0 0 0;
+	background-repeat:norepeat;
+	background-position:center;
+}
+DSGUI--DSTimeAxis DSGUI--DSPlayIndicator#m_pPlayIndicator[moveOn=false]
+{
+	background-image:url(./Skin/DustyBlue/DSGui/TimeAxis/TimerShaftBg.png);
+}
+DSGUI--DSTimeAxis DSGUI--DSPlayIndicator#m_pPlayIndicator[moveOn=true]
+{
+	background-image:url(./Skin/DustyBlue/DSGui/TimeAxis/TimerShaftBgDown.png);
+}
+

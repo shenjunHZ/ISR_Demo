@@ -1,0 +1,15 @@
+DSGUI--DSSwitchButton
+{
+	qproperty-normalOpenBgColor:#0569ff;
+	qproperty-disableOpenBgColor:#527dbf;
+	qproperty-normalCloseBgColor:#6b727c;
+	qproperty-disableCloseBgColor:#78a84;
+	qproperty-thumbColor:#eeeeee;
+	qproperty-disableThumbColor:#a1a3ad;
+    qproperty-outHeight16:18;
+	qproperty-inHeight16:16;
+	qproperty-width16:36;
+    qproperty-margin16:0;
+    qproperty-radius:8.0;
+}
+

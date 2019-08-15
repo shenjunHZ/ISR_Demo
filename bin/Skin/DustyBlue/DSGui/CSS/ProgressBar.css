@@ -1,0 +1,15 @@
+DSGUI--DSProgressBar,
+DSGUI--DSCustomProgressBar
+{
+	border:none;
+	border-radius:2px;
+	background:#222429;
+	text-align: center;
+	color:#ffffff;
+}
+
+DSGUI--DSProgressBar::chunk,
+DSGUI--DSCustomProgressBar::chunk
+{
+	background-color: #0569ff;
+}

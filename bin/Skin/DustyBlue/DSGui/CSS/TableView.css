@@ -1,0 +1,67 @@
+DSGUI--DSTableView
+{ 
+    color: #ABB2BD;
+	background-color: #35393E;
+	border:none;
+	font: 12px;
+    qproperty-alternatingRowColors:true;
+	alternate-background-color: #3A3E43;
+}
+
+DSGUI--DSTableView::item
+{
+	height: 30px;
+	padding: 0px 4px 0px 6px;
+	background-color: transparent;
+	border-right:1px solid #2B2F33;
+}
+
+DSGUI--DSTableView::branch
+{ 
+	image:none;
+	background-color: transparent; 
+}
+
+DSGUI--DSTableView::item:selected, 
+DSGUI--DSTableView::branch:selected,
+DSGUI--DSTableView::item:alternate:selected,
+DSGUI--DSTableView::item:!alternate:selected
+{
+    background-color:#23262A;	
+    color:#FFFFFF;
+}
+
+DSGUI--DSTableView::item:hover, 
+DSGUI--DSTableView::branch:hover,
+DSGUI--DSTableView::item:alternate:hover,
+DSGUI--DSTableView::item:!alternate:hover
+{
+	/*不写hover事件无法触发*/
+	background-color:#2F3337;	
+    color:#FFFFFF;
+}
+
+DSGUI--DSTableView::item:alternate
+{
+	background-color: #3A3E43;
+	color:#ABB2BD;
+}
+ 
+DSGUI--DSTableView::item:!alternate
+{
+	background-color: #35393E;
+	color:#ABB2BD;
+}
+
+DSGUI--DSTableView::indicator
+{
+	width:12px;
+    height:12px;
+}
+
+/*Messagbox 底线颜色*/
+DSGUI--DSBaseView
+{
+	qproperty-msgBoxBottomLineClr:#3a3e43;
+}
+

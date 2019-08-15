@@ -1,0 +1,72 @@
+DSGUI--DSCheckBox::indicator,
+DSGUI--DSHeaderView::indicator,
+DSGUI--DSBaseView::indicator,
+QTreeView::indicator
+{
+	min-width:20px;
+    min-height:20px;
+}
+
+DSGUI--DSCheckBox::indicator:unchecked,
+DSGUI--DSHeaderView::indicator:unchecked,
+DSGUI--DSBaseView::indicator:unchecked,
+QTreeView::indicator:unchecked
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/unselect-n.png);
+}
+
+DSGUI--DSCheckBox::indicator:unchecked:hover,
+DSGUI--DSHeaderView::indicator:unchecked:hover,
+DSGUI--DSHeaderView::indicator:unchecked:hover,
+QTreeView::indicator:unchecked:hover
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/unselect-h.png);
+}
+
+DSGUI--DSCheckBox::indicator:unchecked:disabled,
+DSGUI--DSHeaderView::indicator:unchecked:disabled,
+DSGUI--DSBaseView::indicator:unchecked:disabled,
+QTreeView::indicator:unchecked:disabled
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/unselect-d.png);
+}
+
+DSGUI--DSCheckBox::indicator:checked,
+DSGUI--DSHeaderView::indicator:checked,
+DSGUI--DSBaseView::indicator:checked,
+QTreeView::indicator:checked
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/select-n.png);
+}
+
+DSGUI--DSCheckBox::indicator:checked:hover,
+DSGUI--DSHeaderView::indicator:checked:hover,
+DSGUI--DSHeaderView::indicator:checked:hover,
+QTreeView::indicator:checked:hover
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/select-h.png);
+}
+
+DSGUI--DSCheckBox::indicator:checked:disabled,
+DSGUI--DSHeaderView::indicator:checked:disabled,
+DSGUI--DSBaseView::indicator:checked:disabled,
+QTreeView::indicator:checked:disabled
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/select-d.png);
+}
+
+DSGUI--DSCheckBox::indicator:indeterminate,
+DSGUI--DSHeaderView::indicator:indeterminate,
+DSGUI--DSBaseView::indicator:indeterminate,
+QTreeView::indicator:indeterminate
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/indeterminate-n.png);
+}
+DSGUI--DSCheckBox::indicator:indeterminate:disabled,
+DSGUI--DSHeaderView::indicator:indeterminate:disabled,
+DSGUI--DSBaseView::indicator:indeterminate:disabled,
+QTreeView::indicator:indeterminate:disabled
+{
+    image:url(./Skin/DustyBlue/DSGui/CheckBox/indeterminate-d.png);
+}
+

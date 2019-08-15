@@ -1,0 +1,11 @@
+DSGUI--DSDateCalendar {	
+	background-color:#222429;
+	font:12px;
+	border : none;
+	border-radius:2px;
+	color:#EEEEEE;
+	background-image:url(./Skin/DustyBlue/DSGui/DateTimeCalendar/Calendar-n.png);
+	background-repeat:	no-repeat;
+	background-position: center right;
+	padding-left:4px;
+}

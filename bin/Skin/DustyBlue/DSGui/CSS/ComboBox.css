@@ -1,0 +1,71 @@
+DSGUI--DSComboBox
+{
+	color:#abb2bd;
+	border-image: url(./Skin/DustyBlue/DSGui/ComboBox/comboboxbg_n.png) 2 6 2 6;
+	border-width: 2px 6px 2px 6px;
+	padding-left:3px;
+	margin:0 0 1px 0;
+}
+
+DSGUI--DSComboBox:hover
+{
+	color:#abb2bd;
+	border-image: url(./Skin/DustyBlue/DSGui/ComboBox/comboboxbg_h.png) 2 6 2 6;
+}
+
+DSGUI--DSComboBox:on
+{
+	border-image: url(./Skin/DustyBlue/DSGui/ComboBox/comboboxbg_p.png) 2 6 2 6;
+	color:#ffffff;
+}
+
+DSGUI--DSComboBox:focus
+{
+	border-image: url(./Skin/DustyBlue/DSGui/ComboBox/comboboxbg_p.png) 2 6 2 6;
+	color:#ffffff;
+}
+
+DSGUI--DSComboBox:disabled
+{
+	color:#45515a;
+	border-image: url(./Skin/DustyBlue/DSGui/ComboBox/comboboxbg_d.png) 2 6 2 6;
+}
+
+DSGUI--DSComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 10px;
+    border-left-style: solid;
+}
+
+DSGUI--DSComboBox::down-arrow
+{
+    image: url(./Skin/DustyBlue/DSGui/ComboBox/DropDown-n.png);
+}
+
+DSGUI--DSComboBox::down-arrow:hover
+{
+    image: url(./Skin/DustyBlue/DSGui/ComboBox/DropDown-h.png);
+}
+
+DSGUI--DSComboBox::down-arrow:pressed
+{
+    image: url(./Skin/DustyBlue/DSGui/ComboBox/DropDown-p.png);
+}
+
+DSGUI--DSComboBox::down-arrow:disabled
+{
+    image: url(./Skin/DustyBlue/DSGui/ComboBox/DropDown-d.png);
+}
+
+/********ListView*********/
+DSGUI--DSComboBox DSGUI--DSListView::item
+{
+	padding-left:4px;
+}
+DSGUI--DSComboBox DSGUI--DSListView::item:hover
+{
+	background: #595f69;
+}
+

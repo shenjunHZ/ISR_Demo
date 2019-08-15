@@ -1,0 +1,91 @@
+DSGUI--DSMessageBox
+{
+	qproperty-pixWarningImage:url(./Skin/DustyBlue/DSGui/MessageBox/Warning.png); 
+}
+QLabel{
+    color:#EEEEEE;
+}
+DSGUI--DSPushButton#MsgBtnOk
+{
+	width:70px;
+	height:24px;
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #00b0ff;
+	color: #ffffff;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSPushButton#MsgBtnOk:hover
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #40c4ff;
+	color: #ffffff;
+    outline: none;  
+}
+DSGUI--DSPushButton#MsgBtnOk:pressed
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #00b0ff;
+	color: #ffffff;
+    outline: none;
+}
+DSGUI--DSPushButton#MsgBtnOk:disabled
+{
+	border-image: none;
+    padding: 0;
+	border-radius: 2px;
+	background-color: #41464b;
+	color: #5a6068;
+    outline: none;
+}
+DSGUI--DSPushButton#MsgBtnCancel
+{
+	width:70px;
+	height:24px;
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #4d535b;
+	color: #ffffff;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSPushButton#MsgBtnCancel:hover
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none; 
+}
+DSGUI--DSPushButton#MsgBtnCancel:pressed
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none;
+}
+DSGUI--DSPushButton#MsgBtnCancel:disabled
+{
+	border-image: none;
+    padding: 0;
+	border-radius: 2px;
+	background-color: #41464b;
+	color: #5a6068;
+    outline: none;
+}

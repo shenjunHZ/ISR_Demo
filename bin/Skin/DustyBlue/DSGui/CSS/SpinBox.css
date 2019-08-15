@@ -1,0 +1,126 @@
+DSGUI--DSSpinBox,
+DSGUI--DSDateEdit,
+DSGUI--DSDateTimeEdit,
+DSGUI--DSTimeEdit
+{
+	min-height:24px;
+	max-height:24px;
+	border : 1px solid #1D2125;
+	border-radius: 2px;
+    background-color : #25292C; 
+	color:#ABB2BD;
+	padding-right:15px;
+	padding-left: 8px;
+}
+
+DSGUI--DSSpinBox:hover,
+DSGUI--DSDateEdit:hover,
+DSGUI--DSDateTimeEdit:hover,
+DSGUI--DSTimeEdit:hover
+{
+	border : 1px solid #818796;
+	border-radius: 2px;
+    background-color : #25292C; 
+	color:#FFFFFF;
+}
+
+DSGUI--DSSpinBox:focus,
+DSGUI--DSDateEdit:focus,
+DSGUI--DSDateTimeEdit:focus,
+DSGUI--DSTimeEdit:focus
+{
+	border : 1px solid #40C4FF;
+	border-radius: 2px;
+    background-color : #25292C; 
+	color:#FFFFFF;
+}
+
+DSGUI--DSSpinBox:disabled,
+DSGUI--DSDateEdit:disabled,
+DSGUI--DSDateTimeEdit:disabled,
+DSGUI--DSTimeEdit:disabled
+{
+	border : none;
+    background-color : #474b54; 
+	color:#787878;
+}
+
+DSGUI--DSSpinBox::up-button, 
+DSGUI--DSDateTimeEdit::up-button,
+DSGUI--DSDateEdit::up-button,
+DSGUI--DSTimeEdit::up-button
+{
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+	top:4px;
+	right:6px;
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/UpButton-n.png);
+}
+
+DSGUI--DSSpinBox::up-button:hover,
+DSGUI--DSDateTimeEdit::up-button:hover,
+DSGUI--DSDateEdit::up-button:hover,
+DSGUI--DSTimeEdit::up-button:hover
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/UpButton-h.png);
+}
+
+DSGUI--DSSpinBox::up-button:pressed,
+DSGUI--DSDateTimeEdit::up-button:pressed,
+DSGUI--DSDateEdit::up-button:pressed,
+DSGUI--DSTimeEdit::up-button:pressed 
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/UpButton-p.png);
+}
+
+DSGUI--DSSpinBox::up-button:disabled,
+DSGUI--DSSpinBox::up-button:off,
+DSGUI--DSDateTimeEdit::up-button:disabled,
+DSGUI--DSDateTimeEdit::up-button:off,
+DSGUI--DSDateEdit::up-button:disabled,
+DSGUI--DSDateEdit::up-button:off,
+DSGUI--DSTimeEdit::up-button:disabled,
+DSGUI--DSTimeEdit::up-button:off 
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/UpButton-d.png);
+}
+
+DSGUI--DSSpinBox::down-button,
+DSGUI--DSDateTimeEdit::down-button,
+DSGUI--DSDateEdit::down-button,
+DSGUI--DSTimeEdit::down-button 
+{
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+	bottom:4px;
+	right:6px;
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/DownButton-n.png);
+}
+
+DSGUI--DSSpinBox::down-button:hover,
+DSGUI--DSDateTimeEdit::down-button:hover,
+DSGUI--DSDateEdit::down-button:hover,
+DSGUI--DSTimeEdit::down-button:hover
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/DownButton-h.png);
+}
+
+DSGUI--DSSpinBox::down-button:pressed,
+DSGUI--DSDateTimeEdit::down-button:pressed,
+DSGUI--DSDateEdit::down-button:pressed,
+DSGUI--DSTimeEdit::down-button:pressed 
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/DownButton-p.png);
+}
+
+DSGUI--DSSpinBox::down-button:disabled,
+DSGUI--DSSpinBox::down-button:off,
+DSGUI--DSDateTimeEdit::down-button:disabled,
+DSGUI--DSDateTimeEdit::down-button:off,
+DSGUI--DSDateEdit::down-button:disabled,
+DSGUI--DSDateEdit::down-button:off,
+DSGUI--DSTimeEdit::down-button:disabled,
+DSGUI--DSTimeEdit::down-button:off
+{
+    image: url(./Skin/DustyBlue/DSGui/SpinBox/DownButton-d.png);
+}

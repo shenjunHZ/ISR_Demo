@@ -1,0 +1,42 @@
+DSGUI--DSTabPanel
+{
+	background:transparent;
+	icon-size:100px 100px;
+}
+
+DSGUI--DSTabPanel::tab
+{
+	border-image:none;
+	background:transparent;
+}
+
+DSGUI--DSTabPanel::tab:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/TabPanel/TabPanelHover.png) 6;
+	border-width:6px;
+}
+
+DSGUI--DSTabPanel QToolButton#PreviousBtn
+{
+	border-image:url(./Skin/DustyBlue/DSGui/TabPanel/Previous.png);
+    min-width:12px;
+    max-width:12px;
+    min-height:21px;
+    max-height:21px;
+}
+DSGUI--DSTabPanel QToolButton#PreviousBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/TabPanel/PreviousHover.png);
+}
+DSGUI--DSTabPanel QToolButton#NextBtn
+{
+	border-image:url(./Skin/DustyBlue/DSGui/TabPanel/Next.png);
+    min-width:12px;
+    max-width:12px;
+    min-height:21px;
+    max-height:21px;
+}
+DSGUI--DSTabPanel QToolButton#NextBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/TabPanel/NextHover.png);
+}

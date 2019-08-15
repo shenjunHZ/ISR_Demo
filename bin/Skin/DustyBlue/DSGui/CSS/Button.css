@@ -1,0 +1,32 @@
+DSGUI--DSPushButton,
+DSGUI--DSPushButton:focus
+{
+	width:70px;
+	height:24px;
+	border-image: url(./Skin/DustyBlue/DSGui/Button/btn-n.png) 2 2 2 2;
+	border-width: 2px 2px 2px 2px;
+	color: #eeeeee;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSPushButton:hover
+{
+	border-image: url(./Skin/DustyBlue/DSGui/Button/btn-h.png) 2 2 2 2;
+	border-width: 2px 2px 2px 2px;
+	color: #ffffff;
+    outline: none;   
+}
+DSGUI--DSPushButton:pressed
+{
+	border-image: url(./Skin/DustyBlue/DSGui/Button/btn-p.png) 2 2 2 2;
+	border-width: 2px 2px 2px 2px;
+	color: #eeeeee;
+    outline: none;
+}
+DSGUI--DSPushButton:disabled
+{
+	border-image: url(./Skin/DustyBlue/DSGui/Button/btn-d.png) 2 2 2 2;
+	border-width: 2px 2px 2px 2px;
+	color: #bbbbbb;
+    outline: none;
+}

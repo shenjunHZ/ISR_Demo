@@ -1,0 +1,230 @@
+
+DSGUI--DSCalendar
+{
+	background-color: transparent;
+}
+
+/* 周时间标签 */
+DSGUI--DSCalendar QLabel#lbMon,
+DSGUI--DSCalendar QLabel#lbTue,
+DSGUI--DSCalendar QLabel#lbWed,
+DSGUI--DSCalendar QLabel#lbThu,
+DSGUI--DSCalendar QLabel#lbFri,
+DSGUI--DSCalendar QLabel#lbSat,
+DSGUI--DSCalendar QLabel#lbSun
+{
+	color: #ABB2BD;
+	background-color: transparent;
+	font-size:11px;
+}
+
+DSGUI--DSCalendar QTableWidget#m_tabCalendar
+{
+	color: #ABB2BD;
+	border:none;
+	background-color: transparent;
+	qproperty-showGrid: false;
+}
+DSGUI--DSCalendar QTableWidget#m_tabCalendar::item:hover 
+{
+   color: #FFFFFF;
+   background-image: url(./Skin/DustyBlue/DSGui/Calendar/dateselected-h.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+DSGUI--DSCalendar QTableWidget#m_tabCalendar::item:selected 
+{
+   color: #FFFFFF;
+   background-image: url(./Skin/DustyBlue/DSGui/Calendar/dateselected-n.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+DSGUI--DSCalendar QTableWidget#m_tabCalendar::item:disabled 
+{
+   color: #868D97;
+}
+
+DSGUI--DSCalendar QTableWidget#m_tabYearMonth
+{
+    color: #ABB2BD; 
+	border: none;
+	background-color: transparent;
+	qproperty-showGrid: false;
+}
+DSGUI--DSCalendar QTableWidget#m_tabYearMonth::item
+{
+	color: #ABB2BD;
+}
+DSGUI--DSCalendar QTableWidget#m_tabYearMonth::item:hover
+{
+	color: #FFFFFF; 
+	background-color: #00b0ff;
+	border-radius: 2px;
+}
+DSGUI--DSCalendar QTableWidget#m_tabYearMonth::item:selected 
+{ 
+	color: #FFFFFF;
+	background-color: #40c4ff;
+	border-radius: 2px;
+}
+DSGUI--DSCalendar QTableWidget#m_tabYearMonth::item:disabled 
+{ 
+	color: #868D97;
+}
+
+/* 向前按钮 */
+DSGUI--DSCalendar QPushButton#m_NextBtn
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateR-n.png) no-repeat center center;
+	width:27px;
+	height:21px;
+	border:none;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+DSGUI--DSCalendar QPushButton#m_NextBtn:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateR-h.png) no-repeat center center;
+}
+DSGUI--DSCalendar QPushButton#m_NextBtn:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateR-p.png) no-repeat center center;
+}
+DSGUI--DSCalendar QPushButton#m_NextBtn:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateR-d.png) no-repeat center center;
+}
+
+/* 后退按钮 */
+DSGUI--DSCalendar QPushButton#m_PreviewBtn
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateL-n.png) no-repeat center center;
+	width:27px;
+	height:21px;
+	border:none;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+DSGUI--DSCalendar QPushButton#m_PreviewBtn:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateL-h.png) no-repeat center center;
+}
+DSGUI--DSCalendar QPushButton#m_PreviewBtn:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateL-p.png) no-repeat center center;
+}
+DSGUI--DSCalendar QPushButton#m_PreviewBtn:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Calendar/DateL-d.png) no-repeat center center;
+}
+
+/* 年、月选择按钮 */
+DSGUI--DSCalendar QPushButton#m_YearBtn,
+DSGUI--DSCalendar QPushButton#m_MonthBtn
+{
+	border:none;
+	color: #ABB2BD;
+}
+DSGUI--DSCalendar QPushButton#m_YearBtn:hover,
+DSGUI--DSCalendar QPushButton#m_MonthBtn:hover
+{
+   color: #FFFFFF;
+}
+DSGUI--DSCalendar QPushButton#m_YearBtn:Pressed,
+DSGUI--DSCalendar QPushButton#m_MonthBtn:Pressed
+{
+   color: #40C4FF;
+}
+DSGUI--DSCalendar QPushButton#m_YearBtn:disabled,
+DSGUI--DSCalendar QPushButton#m_MonthBtn:disabled
+{
+	color: #565C62;
+}
+
+DSGUI--DSCalendar QLabel#lbName
+{
+	color:#ABB2BD;
+}
+
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit
+{
+	min-height:26px;
+	max-height:26px;
+	color:#abb2bd;
+	border-image: url(./Skin/DustyBlue/DSGui/Calendar/bg-n.png) 2 6 2 6;
+	border-width: 2px 6px 2px 6px;
+	padding: 0px 4px 0px 4px;
+	margin:0 0 1px 0;
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit:hover
+{
+	color:#abb2bd;
+	border-image: url(./Skin/DustyBlue/DSGui/Calendar/bg-h.png) 2 6 2 6;
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit:focus
+{
+	color:#FFFFFF;
+	border-image: url(./Skin/DustyBlue/DSGui/Calendar/bg-p.png) 2 6 2 6;
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit:disabled
+{
+	color:#45515a;
+	border-image: url(./Skin/DustyBlue/DSGui/Calendar/bg-d.png) 2 6 2 6;
+}
+
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::up-button
+{
+	subcontrol-origin: border;
+    subcontrol-position: top right;
+	top:4px;
+	right:6px;
+    image: url(./Skin/DustyBlue/DSGui/Calendar/UpButton-n.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::up-button:hover
+{
+	image: url(./Skin/DustyBlue/DSGui/Calendar/UpButton-h.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::up-button:pressed
+{
+	image: url(./Skin/DustyBlue/DSGui/Calendar/UpButton-p.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::up-button:disabled
+{
+	image: url(./Skin/DustyBlue/DSGui/Calendar/UpButton-d.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::down-button
+{
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+	bottom:4px;
+	right:6px;
+    image: url(./Skin/DustyBlue/DSGui/Calendar/DownButton-n.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::down-button:hover
+{
+    image: url(./Skin/DustyBlue/DSGui/Calendar/DownButton-h.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::down-button:pressed
+{
+    image: url(./Skin/DustyBlue/DSGui/Calendar/DownButton-p.png);
+}
+DSGUI--DSCalendar QDateTimeEdit#m_dateTimeEdit::down-button:disabled
+{
+    image: url(./Skin/DustyBlue/DSGui/Calendar/DownButton-d.png);
+}
+
+DSGUI--DSCalendarEx
+{
+	background-color: transparent;
+}
+
+/* 起始和终止日历表 */
+DSGUI--DSCalendarEx QWidget#centerWidget
+{
+	border-image: url(./Skin/DustyBlue/DSGui/Calendar/Bg.png) 66 11 66 11;
+	border-width: 66px 11px 66px 11px;
+}
+DSGUI--DSCalendarEx QWidget#DSCalendarExline
+{
+	background-color: #161A1E;
+}

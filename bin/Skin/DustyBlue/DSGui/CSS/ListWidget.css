@@ -1,0 +1,25 @@
+DSGUI--DSListWidget
+{
+	background:#1e2021;
+	color: #eeeeee;
+}
+
+DSGUI--DSListWidget::item
+{
+	background-color: transparent;
+	height:28px;
+	color: #EEEEEE;
+	border:10px #ff0000 soild;
+}
+DSGUI--DSListWidget::item:hover
+{
+	height: 28px;
+	background-color:#0569FF;
+    color:#ffffff;
+} 
+DSGUI--DSListWidget::item:selected
+{
+	height: 28px;
+    color: #FFFFFF;
+	background-color:#0569FF;
+} 

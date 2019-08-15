@@ -1,0 +1,33 @@
+DSGUI--DSToolBox::tab
+{
+	color:#abb2bd;
+	font-size:14px;
+	padding-left:10px;
+	border-width: 6px 0 6px 0;
+}
+
+DSGUI--DSToolBox::tab:selected
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Toolbox/1.png) 6 0 6 0;
+}
+
+DSGUI--DSToolBox::tab:!selected
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Toolbox/2.png) 6 0 6 0;
+}
+
+DSGUI--DSToolBox::tab:last:!selected
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Toolbox/4.png) 6 0 6 0;
+}
+
+DSGUI--DSToolBox QToolBoxButton,
+DSGUI--DSCustomToolBox DSGUI--CToolBoxButton
+{
+	min-height:47px;
+}
+DSGUI--DSToolBox QScrollArea
+{
+    background-color:transparent;
+    border: none;
+}

@@ -1,0 +1,169 @@
+/* add by 28880 */
+DSGUI--DSScrollBar:horizontal 
+{
+	background:#3d4249;
+	border:none;
+	border-radius:4px;
+    height: 8px;
+	margin: 0px;
+ }
+DSGUI--DSScrollBar::handle:horizontal
+{
+    background:#6a7078;
+	border:none;
+	border-radius:4px;
+	min-width:20px;
+}
+DSGUI--DSScrollBar::handle:horizontal::pressed
+{
+    background:#8b929b;
+}
+DSGUI--DSScrollBar::add-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::sub-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 0px;	
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::add-page:horizontal,
+DSGUI--DSScrollBar::sub-page:horizontal
+{
+    background: none;
+}
+
+DSGUI--DSScrollBar:vertical {
+	background:#3d4249;
+	border:none;
+	border-radius:4px;
+    width: 8px;
+	margin: 0px;
+ }
+DSGUI--DSScrollBar::handle:vertical
+{
+    background:#6a7078;
+	border:none;
+	border-radius:4px;
+	min-height:20px;
+}
+DSGUI--DSScrollBar::handle:vertical::pressed
+{
+    background:#8b929b;
+}
+DSGUI--DSScrollBar::sub-line:vertical
+{
+    border-width:0px 0px 0px 0px;
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::add-line:vertical
+{ 
+    border-width:0px 0px 0px 0px;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::add-page:vertical,
+DSGUI--DSScrollBar::sub-page:vertical
+{
+    background: none;
+}
+/* END */
+
+/* delete by 28880 */
+/*DSGUI--DSScrollBar:vertical
+{
+    border-image:url(./Skin/DustyBlue/DSGui/Scrollbar/VerticalPanel.png) 0 1 0 1;
+    border-width:0 1px 0 1px;
+    width: 13px;
+    margin: 14px 0 14px 0;
+}
+
+DSGUI--DSScrollBar::handle:vertical
+{
+    border-image:url(./Skin/DustyBlue/DSGui/Scrollbar/VerHandle.png) 0 1 0 1; 
+    border-width:0 1px 0 1px;
+    min-height:10px; 
+}
+
+DSGUI--DSScrollBar::sub-line:vertical
+{
+    border-width:0px 0px 0px 0px;
+    height: 14px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::add-line:vertical
+{ 
+    border-width:0px 0px 0px 0px;
+    height: 14px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::up-arrow:vertical
+{
+    image: url(./Skin/DustyBlue/DSGui/Scrollbar/UpArrow.png);
+}
+
+DSGUI--DSScrollBar::down-arrow:vertical
+{
+    image:url(./Skin/DustyBlue/DSGui/Scrollbar/DownArrow.png);
+}
+
+DSGUI--DSScrollBar::add-page:vertical,
+DSGUI--DSScrollBar::sub-page:vertical
+{
+    background: none;
+}
+
+DSGUI--DSScrollBar:horizontal
+{
+    border-image:url(./Skin/DustyBlue/DSGui/Scrollbar/HorizontalPanel.png) 1 0 1 0;
+    border-width:1px 0 1px 0; 
+    height: 13px;
+    margin: 0 14px 0 14px;
+}
+
+DSGUI--DSScrollBar::handle:horizontal
+{
+    border-image:url(./Skin/DustyBlue/DSGui/Scrollbar/HorHandle.png) 1 0 1 0; 
+    border-width:1px 0 1px 0; 
+    min-width: 10px;
+}
+
+DSGUI--DSScrollBar::add-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 14px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+DSGUI--DSScrollBar::sub-line:horizontal
+{
+    border-width:0px 0px 0px 0px;
+    width: 14px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+DSGUI--DSScrollBar::left-arrow:horizontal
+{
+    image: url(./Skin/DustyBlue/DSGui/Scrollbar/LeftArrow.png);         
+}
+DSGUI--DSScrollBar::right-arrow:horizontal
+{
+    image: url(./Skin/DustyBlue/DSGui/Scrollbar/RightArrow.png);
+}
+DSGUI--DSScrollBar::add-page:horizontal,
+DSGUI--DSScrollBar::sub-page:horizontal
+{
+    background: none;
+}
+*/

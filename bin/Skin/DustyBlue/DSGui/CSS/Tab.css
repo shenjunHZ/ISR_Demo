@@ -1,0 +1,44 @@
+DSGUI--DSTabBar
+{
+	qproperty-drawBase:false;
+}
+
+DSGUI--DSTabBar::tab
+{ 
+	min-width:100px;
+	height:28px;
+	color:#abb2bd;
+	font-size: 12px;
+	margin:0px 5px 0px 0px;
+	padding-left:20px;
+	padding-right:20px;
+	border-width: 2px 2px 0 2px;
+}
+
+DSGUI--DSTabBar::tab:selected
+{
+    border-image: url(./Skin/DustyBlue/DSGui/Tab/tab_pending.png);
+	color:#ffffff;
+}
+
+DSGUI--DSTabBar::tab:!selected
+{
+    border-image: url(./Skin/DustyBlue/DSGui/Tab/tab_current.png);
+	color:#abb2bd;
+}
+
+DSGUI--DSTabBar::tab:hover:!selected
+{
+    border-image: url(./Skin/DustyBlue/DSGui/Tab/tab_hover.png);
+	color:#ffffff;
+}
+
+DSGUI--DSTabBar::tab:!first
+{ 
+    /*margin:0px 0px 0px -8px;*/
+}
+
+DSGUI--DSTabWidget::pane 
+{
+    border: none;
+}

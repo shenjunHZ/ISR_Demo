@@ -1,0 +1,250 @@
+/*	水平向 */
+DSGUI--DSSlider::groove:horizontal
+{
+	background: transparent;
+    height: 4px;
+    margin: 0px;
+    left:7px;
+    right:7px;
+}
+
+DSGUI--DSSlider::handle:horizontal
+{ 
+    background-image: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-n.png);
+    margin: -6px -7px -6px -7px;
+    width: 14px;
+    height: 16px;
+}
+
+DSGUI--DSSlider::handle:horizontal:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-h.png) no-repeat;
+}
+
+DSGUI--DSSlider::handle:horizontal:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-p.png) no-repeat;
+}
+
+DSGUI--DSSlider::handle:horizontal:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-d.png) no-repeat;
+}
+
+DSGUI--DSSlider::add-page:horizontal {
+	background-color: #16191B;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+ 
+ DSGUI--DSSlider::add-page:horizontal:disabled {
+	background-color: #23262A;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+
+DSGUI--DSSlider::sub-page:horizontal {
+	background-color: #50565D;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+ 
+ DSGUI--DSSlider::sub-page:horizontal:disabled {
+	background-color: #23262A;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+
+/*	竖直向 */
+DSGUI--DSSlider::groove:vertical
+{
+	background: transparent;
+    width: 4px;
+    margin: 0px;
+    top:2px;
+    bottom:2px;
+}
+DSGUI--DSSlider::handle:vertical
+{ 
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-n.png) no-repeat center center;
+    margin: -5px -9px -5px -9px;
+    height: 20px;
+}
+
+DSGUI--DSSlider::handle:vertical:hover
+{
+	color: #FFFFFF;
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-h.png) no-repeat center center;
+}
+
+DSGUI--DSSlider::handle:vertical:pressed
+{
+	color: #404CFF;
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-p.png) no-repeat center center;
+}
+
+DSGUI--DSSlider::handle:vertical:disabled
+{
+	color: #868D97;
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-d.png) no-repeat center center;
+}
+
+DSGUI--DSSlider::add-page:vertical {
+	background-color: #50565D;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+ 
+ DSGUI--DSSlider::add-page:vertical:disabled {
+	background-color: #23262A;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+
+DSGUI--DSSlider::sub-page:vertical {
+	background-color: #16191B;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+ 
+ DSGUI--DSSlider::sub-page:vertical:disabled {
+	background-color: #23262A;
+	border:1px solid #16191B;
+	border-radius:2px;
+ }
+
+ /* 水平向 */
+ DSGUI--DSSliderEx::groove:horizontal {
+	background: transparent;
+    height: 4px;
+    margin: 0px;
+    left:7px;
+    right:7px;
+} 
+DSGUI--DSSliderEx[handleHover=false]::handle:horizontal
+{ 
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-n.png) no-repeat;
+	margin: -6px -7px -6px -7px;
+    width: 16px;
+    height: 16px;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:horizontal:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-h.png) no-repeat;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:horizontal:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-p.png) no-repeat;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:horizontal:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-d.png) no-repeat;
+}
+
+DSGUI--DSSliderEx[handleHover=true]::handle:horizontal
+{ 
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-n.png) no-repeat;
+    margin: -6px -7px -6px -7px;
+    width: 16px;
+    height: 16px;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:horizontal:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-h.png) no-repeat;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:horizontal:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-p.png) no-repeat;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:horizontal:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-h-d.png) no-repeat;
+}
+DSGUI--DSSliderEx::add-page:horizontal {
+	background-color: #16191B;
+	border:1px solid #16191B;
+	border-radius:2px;
+}
+DSGUI--DSSliderEx::sub-page:horizontal {
+	background-color: #50565D;
+	border:1px solid #16191B;
+	border-radius:2px;
+}
+
+/*	竖直向 */
+ DSGUI--DSSliderEx::groove:vertical {
+	background: transparent;
+    width: 4px;
+    margin: 0px;
+    top:2px;
+    bottom:2px;
+} 
+DSGUI--DSSliderEx[handleHover=false]::handle:vertical
+{ 
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-n.png) no-repeat center center;
+	margin: -5px -9px -5px -9px;
+    width: 16px;
+    height: 20px;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:vertical:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-h.png) no-repeat center center;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:vertical:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-p.png) no-repeat center center;
+}
+DSGUI--DSSliderEx[handleHover=false]::handle:vertical:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-d.png) no-repeat center center;
+}
+
+DSGUI--DSSliderEx[handleHover=true]::handle:vertical
+{ 
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-n.png) no-repeat center center;
+    margin: -5px -9px -5px -9px;
+    width: 16px;
+    height: 20px;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:vertical:hover
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-h.png) no-repeat center center;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:vertical:pressed
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-p.png) no-repeat center center;
+}
+DSGUI--DSSliderEx[handleHover=true]::handle:vertical:disabled
+{
+    background: url(./Skin/DustyBlue/DSGui/Slider/Handle-v-d.png) no-repeat center center;
+}
+DSGUI--DSSliderEx::add-page:vertical {
+	background-color: #16191B;
+	border:1px solid #16191B;
+	border-radius:2px;
+}
+DSGUI--DSSliderEx::sub-page:vertical {
+	background-color: #50565D;
+	border:1px solid #16191B;
+	border-radius:2px;
+}
+
+QLabel#m_pNumLab
+{
+	border-image: none;
+	color:#ABB2BD;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:4px;
+	padding-bottom:2px;
+} 
+
+QLabel#m_pHintNumUponLab
+{
+	border-image: none;
+	color:#ffffff;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:0;
+	width: 40px;
+} 

@@ -1,0 +1,231 @@
+DSGUI--DSDialog
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/DialogBg.png) 33 11 10 11;
+	border-width:33px 11px 10px 11px;
+	qproperty-pixBorderImage:url(./Skin/DustyBlue/DSGui/Dialog/DialogBg.png);
+}
+
+DSGUI--DSDialog DSGUI--DSDialogTitle
+{
+	min-height:33px;
+	max-height:33px;	
+}
+
+DSGUI--DSDialogTitle > DSGUI--DSWindowTitleLabel
+{
+	color : #ffffff;
+}
+
+/*关闭按钮*/
+DSGUI--DSDialogTitle > QToolButton#pCloseBtn
+{
+	qproperty-minimumSize:20px 20px;
+	qproperty-maximumSize:20px 20px;
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/CloseNormal.png); 
+	qproperty-autoRaise:false;
+}
+DSGUI--DSDialogTitle > QToolButton#pCloseBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/CloseHover.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pCloseBtn:pressed
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/ClosePressed.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pCloseBtn:disabled
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/CloseDisabled.png);
+}
+
+/*最小化按钮*/
+DSGUI--DSDialogTitle > QToolButton#pMinBtn
+{
+	qproperty-minimumSize:20px 20px;
+	qproperty-maximumSize:20px 20px;
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MinNormal.png); 
+	qproperty-autoRaise:false;
+}
+DSGUI--DSDialogTitle > QToolButton#pMinBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MinHover.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pMinBtn:pressed
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MinPressed.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pMinBtn:disabled
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MinDisabled.png);
+}
+
+/*最大按钮*/
+DSGUI--DSDialogTitle > QToolButton#pMaxBtn
+{
+	qproperty-minimumSize:20px 20px;
+	qproperty-maximumSize:20px 20px;
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MaxNormal.png); 
+	qproperty-autoRaise:false;
+}
+DSGUI--DSDialogTitle > QToolButton#pMaxBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MaxHover.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pMaxBtn:pressed
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MaxPressed.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pMaxBtn:disabled
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/MaxDisabled.png);
+}
+
+/*还原按钮*/
+DSGUI--DSDialogTitle > QToolButton#pReductionBtn
+{
+	qproperty-minimumSize:20px 20px;
+	qproperty-maximumSize:20px 20px;
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/ReductionNormal.png); 
+	qproperty-autoRaise:false;
+}
+DSGUI--DSDialogTitle > QToolButton#pReductionBtn:hover
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/ReductionHover.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pReductionBtn:pressed
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/ReductionPressed.png);
+}
+DSGUI--DSDialogTitle > QToolButton#pReductionBtn:disabled
+{
+	border-image:url(./Skin/DustyBlue/DSGui/Dialog/ReductionDisabled.png);
+}
+
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OkButton
+{
+	width:70px;
+	height:24px;
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #00b0ff;
+	color: #ffffff;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OkButton:hover
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #40c4ff;
+	color: #ffffff;
+    outline: none;    
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OkButton:pressed
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #2c8df3;*/
+	border-radius: 2px;
+	background-color: #00b0ff;
+	color: #ffffff;
+    outline: none;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OkButton:disabled
+{
+	border-width: 0px;
+	border-image: none;
+    padding: 0;
+	border-radius: 2px;
+	background-color: #41464b;
+	color: #5a6068;
+    outline: none;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#CancelButton
+{
+	width:70px;
+	height:24px;
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #4b535b;
+	color: #ffffff;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#CancelButton:hover
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none; 
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#CancelButton:pressed
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#CancelButton:disabled
+{
+	border-width: 0px;
+	border-image: none;
+    padding: 0;
+	border-radius: 2px;
+	background-color: #41464b;
+	color: #5a6068;
+    outline: none;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OtherButton
+{
+	width:70px;
+	height:24px;
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #4b535b;
+	color: #ffffff;
+    outline: none;
+	font-size:12px;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OtherButton:hover
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none; 
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OtherButton:pressed
+{
+	border-image: none;
+    padding: 0;
+	/*border: 1px solid #1f2126;*/
+	border-radius: 2px;
+	background-color: #53585e;
+	color: #ffffff;
+    outline: none;
+}
+DSGUI--DSCustomDialog DSGUI--DSPushButton#OtherButton:disabled
+{
+	border-width: 0px;
+	border-image: none;
+    padding: 0;
+	border-radius: 2px;
+	background-color: #41464b;
+	color: #5a6068;
+    outline: none;
+}

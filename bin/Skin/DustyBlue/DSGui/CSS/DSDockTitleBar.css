@@ -1,0 +1,37 @@
+QPushButton#BTN_BACK {
+    border: none;
+	outline: none;
+	margin: 0;
+	padding: 42px 0 0 0;
+	background-repeat: none;
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/reduction-normal.png) no-repeat;
+}
+
+QPushButton#BTN_BACK:hover{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/reduction-hover.png) no-repeat;
+}
+QPushButton#BTN_BACK:pressed{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/reduction-pressed.png) no-repeat;
+}
+QPushButton#BTN_BACK:disabled{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/reduction-disabled.png) no-repeat;
+}
+
+QPushButton#BTN_BACK:checked {
+    border: none;
+	outline: none;
+	margin: 0;
+	padding: 42px 0 0 0;
+	background-repeat: none;
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/back-normal.png) no-repeat;
+}
+
+QPushButton#BTN_BACK:checked:hover{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/back-hover.png) no-repeat;
+}
+QPushButton#BTN_BACK:checked:pressed{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/back-pressed.png) no-repeat;
+}
+QPushButton#BTN_BACK:checked:disabled{
+	border-image: url(./Skin/DustyBlue/DSGui/DockWidget/back-disabled.png) no-repeat;
+}

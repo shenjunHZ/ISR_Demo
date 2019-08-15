@@ -1,0 +1,72 @@
+DSGUI--DSMenu
+{ 
+	font-size: 12px;
+	background-color: #2b2f33;
+	max-width:180px;
+	border: 1px solid #161a1e;
+	color:#abb2bd;
+	menu-scrollable:1;
+	margin:0;
+}
+
+DSGUI--DSMenu::icon
+{ 
+	min-width:20px;
+	min-height:20px;
+	max-width:20px;
+	max-height:20px;
+	margin-left: 3px;
+	margin-right: 8px;
+	margin-top: 5px;
+}
+
+DSGUI--DSMenu::item
+{
+	max-height: 24px;
+	min-height: 24px;
+	padding: 0px 3px 0px 31px;
+	margin:0;
+}
+
+DSGUI--DSMenu::item:enabled
+{
+	color: #abb2bd;
+	background-color: #2b2f33;
+}
+
+DSGUI--DSMenu::item:disabled
+{
+	color: #4a515a;
+	background-color: #2b2f33;
+}
+
+DSGUI--DSMenu::item:enabled:selected
+{ 
+	background-color: #00b0ff;
+	color: #ffffff;
+}
+
+DSGUI--DSMenu::separator
+{
+    height: 1px;
+    max-height: 1px;
+    background-color: #35393d;
+}
+
+DSGUI--DSMenu QMenu::right-arrow
+{
+	image: url(./Skin/DustyBlue/DSGui/Menu/arrow_normal.png);
+    width: 5px;
+    height: 5px;
+	padding-right: 10px;
+}
+
+DSGUI--DSMenu QMenu::right-arrow:enabled:selected
+{
+	image: url(./Skin/DustyBlue/DSGui/Menu/arrow_pressed.png);
+}
+
+DSGUI--DSMenu QMenu::right-arrow:disabled
+{
+	image: url(./Skin/DustyBlue/DSGui/Menu/arrow_disable.png);
+}
