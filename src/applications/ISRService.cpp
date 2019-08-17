@@ -12,14 +12,10 @@ namespace
     COORD begin_pos = { 0, 0 };
     COORD last_pos = { 0, 0 };
 
-    std::atomic_bool keep_running = true;
 } // namespace
 
 namespace applications
 {
-    std::vector<HANDLE> ISRService::m_events{ nullptr, nullptr, nullptr };
-    HANDLE ISRService::m_helperThreadHandle{ nullptr };
-
     ISRService::ISRService(Logger& logger, configuration::ISRLoginParams& loginParams,
         std::string& sessionParams)
         : m_logger{ logger }
@@ -41,7 +37,7 @@ namespace applications
     bool ISRService::logoutSDK()
     {
         int ret = MSPLogout();
-        if (MSP_SUCCESS != ret) //ÍË³öµÇÂ¼
+        if (MSP_SUCCESS != ret) // log out sdk
         {
             LOG_ERROR_MSG("MSPLogin failed, error code: %d.", ret);
         }
@@ -85,12 +81,6 @@ namespace applications
 
     void ISRService::startISRAnalysisMic()
     {
-        int errcode;
-        int i = 0;
-
-        DWORD waitres;
-        char isquit = 0;
-
         configuration::ISRSpeechRecNotifier recnotifier =
         {
             std::bind(&ISRService::analysisResult, this, std::placeholders::_1, std::placeholders::_2),
@@ -98,64 +88,12 @@ namespace applications
             std::bind(&ISRService::speechEnd, this, std::placeholders::_1)
         };
 
-        errcode = ISRInit(configuration::ISRAudsrc::SR_MIC, DEFAULT_INPUT_DEVID, recnotifier);
+        int errcode = ISRInit(configuration::ISRAudsrc::SR_MIC, DEFAULT_INPUT_DEVID, recnotifier);
         if (errcode)
         {
             LOG_DEBUG_MSG("speech recognizer init failed!");
             return;
         }
-
-//         auto total = static_cast<int>(configuration::EventState::EVT_TOTAL);
-//         for (i = 0; i < total; ++i)
-//         {
-//             m_events[i] = CreateEvent(NULL, FALSE, FALSE, NULL);
-//         }
-
-//         m_helperThreadHandle = startHelperThread();
-//         if (nullptr == m_helperThreadHandle)
-//         {
-//             LOG_DEBUG_MSG("create thread failed.");
-//             exitAnalysisMic();
-//             return;
-//         }
-
-//        showKeyHints();
-
-//         while (keep_running)
-//         {
-//             waitres = WaitForMultipleObjects(total, &m_events[0], FALSE, INFINITE);
-//             switch (waitres)
-//             {
-//             case WAIT_FAILED:
-//             case WAIT_TIMEOUT:
-//                 LOG_DEBUG_MSG("Why it happened !");
-//                 break;
-//             case WAIT_OBJECT_0 + static_cast<int>(configuration::EventState::EVT_START) :
-//                 if (errcode = srStartListening())
-//                 {
-//                     LOG_DEBUG_MSG("start listen failed {}", errcode);
-//                     isquit = 1;
-//                 }
-//                 break;
-//             case WAIT_OBJECT_0 + static_cast<int>(configuration::EventState::EVT_STOP) :
-//                 if (errcode = srStopListening())
-//                 {
-//                     LOG_DEBUG_MSG("stop listening failed {}", errcode);
-//                     isquit = 1;
-//                 }
-//                 break;
-//             case WAIT_OBJECT_0 + static_cast<int>(configuration::EventState::EVT_QUIT) :
-//                 srStopListening();
-//                 isquit = 1;
-//                 break;
-//             default:
-//                 break;
-//             }
-//             if (isquit)
-//                 break;
-//         }
-// 
-//         exitAnalysisMic();
     }
 
     int ISRService::ISRInit(const configuration::ISRAudsrc audSrc, const int devId,
@@ -250,68 +188,8 @@ namespace applications
         return -1;
     }
 
-    HANDLE ISRService::startHelperThread()
-    {
-        HANDLE hdl;
-
-        hdl = (HANDLE)(_beginthreadex(NULL, 0, helperThreadProc, NULL, 0, NULL));
-
-        return hdl;
-    }
-
-    /* helper thread: to listen to the keystroke */
-    unsigned int  __stdcall ISRService::helperThreadProc(void* para)
-    {
-        int key;
-        int quit = 0;
-
-        do
-        {
-            key = _getch();
-            switch (key)
-            {
-            case 'r':
-            case 'R':
-                SetEvent(m_events[static_cast<int>(configuration::EventState::EVT_START)]);
-                break;
-            case 's':
-            case 'S':
-                SetEvent(m_events[static_cast<int>(configuration::EventState::EVT_STOP)]);
-                break;
-            case 'q':
-            case 'Q':
-                quit = 1;
-                SetEvent(m_events[static_cast<int>(configuration::EventState::EVT_QUIT)]);
-                PostQuitMessage(0);
-                break;
-            default:
-                break;
-            }
-
-            if (quit)
-                break;
-        } while (1);
-
-        return 0;
-    }
-
     void ISRService::exitAnalysisMic()
     {
-        if (nullptr != m_helperThreadHandle)
-        {
-            WaitForSingleObject(m_helperThreadHandle, INFINITE);
-            CloseHandle(m_helperThreadHandle);
-        }
-
-        auto total = static_cast<int>(configuration::EventState::EVT_TOTAL);
-        for (int i = 0; i < total; ++i)
-        {
-            if (m_events[i])
-            {
-                CloseHandle(m_events[i]);
-            }
-        }
-
         ISRUninit();
     }
 
@@ -440,16 +318,6 @@ namespace applications
         return 0;
     }
 
-    void ISRService::showKeyHints()
-    {
-        printf("\n\
-----------------------------\n\
-Press r to start speaking\n\
-Press s to end your speaking\n\
-Press q to quit\n\
-----------------------------\n");
-    }
-
     /* after stop_record, there are still some data callbacks */
     void ISRService::waitForRecStop(configuration::ISRRecorder& recorder, unsigned int timeout_ms /*= -1*/)
     {
@@ -477,7 +345,7 @@ Press q to quit\n\
 
         if (m_speechRec.state < configuration::SRState::SR_STATE_STARTED)
         {
-            LOG_ERROR_MSG("Not started or already stopped.");
+            LOG_DEBUG_MSG("Not started or already stopped.");
             return 0;
         }
 
@@ -536,33 +404,10 @@ Press q to quit\n\
 
     void ISRService::showAnalysisResult(const std::string& result, const char& isLast)
     {
-        COORD current;
-        CONSOLE_SCREEN_BUFFER_INFO info;
-        HANDLE w = GetStdHandle(STD_OUTPUT_HANDLE);
-        GetConsoleScreenBufferInfo(w, &info);
-        current = info.dwCursorPosition;
-
-        if (current.X == last_pos.X && current.Y == last_pos.Y)
+        if (registerNotify)
         {
-            SetConsoleCursorPosition(w, begin_pos);
+            registerNotify(result, isLast);
         }
-        else
-        {
-            /* changed by other routines, use the new pos as start */
-            begin_pos = current;
-        }
-        if (isLast)
-        {
-            SetConsoleTextAttribute(w, FOREGROUND_GREEN);
-        }
-        LOG_DEBUG_MSG("Result: {}", result);
-        if (isLast)
-        {
-            SetConsoleTextAttribute(w, info.wAttributes);
-        }
-
-        GetConsoleScreenBufferInfo(w, &info);
-        last_pos = info.dwCursorPosition;
     }
 
     void ISRService::speechBegin()
@@ -678,9 +523,9 @@ Press q to quit\n\
 #endif
     }
 
-    void ISRService::exitISRService()
+    void ISRService::setRegisterNotify(std::function<void(const std::string&, const bool&)> registerNotify)
     {
-        keep_running = false;
+        this->registerNotify = registerNotify;
     }
 
 } // namespace applications

@@ -15,7 +15,8 @@ namespace
             (configuration::ISRWorkDir, value<std::string>()->default_value("./Windows_iat1226_5d3807fe/bin"), "ISR work directory")
             (configuration::ISRUploadOn, value<bool>()->default_value(false), "Does need ISR upload on key words")
             (configuration::ISRUploadUserWords, value<std::string>()->default_value("userwords.txt"), "ISR upload user words")
-            (configuration::ISRSessionParams, value<std::string>()->default_value("sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = gb2312"), "ISR session begin params");
+            (configuration::ISRSessionParams, value<std::string>()->default_value("sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = gb2312"), "ISR session begin params")
+            (configuration::logFilePath, value<std::string>()->default_value("./log/logFile.log"), "use for recored logs");
 
         return description;
     }

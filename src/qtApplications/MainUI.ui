@@ -318,7 +318,7 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="DSGUI::DSLineEdit" name="lePath">
+            <widget class="DSGUI::DSLineEdit" name="leResult">
              <property name="minimumSize">
               <size>
                <width>240</width>

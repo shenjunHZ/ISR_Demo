@@ -11,9 +11,9 @@ namespace logger
 {
     namespace
     {
-        std::shared_ptr<spdlog::logger> createLogger(const std::string& name, spdlog::level::level_enum level)
+        std::shared_ptr<spdlog::logger> createLogger(const std::string& name, spdlog::level::level_enum level, std::string& filePath)
         {
-            const auto& sinks = LoggerConfiguration::instance().getSinks();
+            const auto& sinks = LoggerConfiguration::instance().getSinks(filePath);
             // thread_pool() has queue size of 8192 and 1 worker thread
             auto logger = std::make_shared<spdlog::async_logger>(name, sinks.cbegin(), sinks.cend(), spdlog::thread_pool());
             logger->set_level(level);
@@ -23,9 +23,9 @@ namespace logger
         }
     } // namespace
 
-    spdlog::logger& getLogger()
+    spdlog::logger& getLogger(std::string filePath /*= ""*/)
     {
-        static auto logger = createLogger("ISR_Demo", spdlog::level::trace);
+        static auto logger = createLogger("ISR_Demo", spdlog::level::trace, filePath);
         return *logger;
     }
 } // namespace logger

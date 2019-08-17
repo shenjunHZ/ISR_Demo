@@ -57,8 +57,6 @@ namespace
         }
         return "";
     }
-
-    std::atomic_bool keep_running(true);
 }
 
 namespace applications
@@ -103,17 +101,13 @@ namespace applications
         {
             return;
         }
-//         std::thread ISRAnalysisThread(
-//             [this]() {
-//             m_ISRService->ISRAnalysis();
-//         });
+
         m_ISRService->ISRAnalysis();
 
         m_MainUI = std::make_unique<MainUI>(*m_ISRService);
         m_MainUI->init();
         int dlgCode = m_MainUI->exec();
 
-        m_ISRService->exitISRService();
         m_ISRService->exitAnalysisMic();
 
         if (QDialog::Rejected == dlgCode)

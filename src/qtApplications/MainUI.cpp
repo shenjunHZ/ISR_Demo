@@ -45,8 +45,9 @@ namespace applications
         m_msgLabel->hide();
 
 
-        ui->lePath->setTextMargins(24, 0, 20, 0);
-        ui->lePath->installEventFilter(this);
+        ui->leResult->setTextMargins(24, 0, 20, 0);
+        ui->leResult->installEventFilter(this);
+        ui->leResult->setReadOnly(true);
         ui->ParserBg->installEventFilter(this);
         ui->ParserBg->setFocus();
 
@@ -58,6 +59,8 @@ namespace applications
 
         this->setModal(true);
         this->activateWindow();
+
+        m_IISRService.setRegisterNotify(std::bind(&MainUI::analysisResult, this, std::placeholders::_1, std::placeholders::_2));
     }
 
     MainUI::~MainUI()
@@ -73,7 +76,7 @@ namespace applications
 
     void MainUI::initCommSkinInfo()
     {	
-        ui->lePath->setText("");
+        ui->leResult->setText("");
     }
 
     void MainUI::SetErrorMsg(const QString& tipMsg)
@@ -188,10 +191,11 @@ namespace applications
 
     void MainUI::onStartRecord()
     {
-        SetErrorMsg("");
+        ui->leResult->clear();
+
+        ui->startRecordBtn->setDisabled(true);
         m_IISRService.srStartListening();
     }
-
 
     void MainUI::onBtnQuit()
     {
@@ -204,10 +208,21 @@ namespace applications
     void MainUI::onEndRecord()
     {
         QWidget *obj = (QWidget*)sender();
-        ui->lePath->clear();
-        SetErrorMsg("");
         
         m_IISRService.srStopListening();
+        ui->startRecordBtn->setEnabled(true);
+    }
+
+    void MainUI::analysisResult(const std::string& result, const bool& isLast)
+    {
+
+        QString leResult = ui->leResult->text();
+        ui->leResult->setText(QString::fromLocal8Bit(result.c_str()));
+
+        if (isLast)
+        {
+            ui->startRecordBtn->setEnabled(true);
+        }
     }
 
 } // namespace operation

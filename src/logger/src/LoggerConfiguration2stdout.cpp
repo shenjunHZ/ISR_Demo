@@ -6,5 +6,5 @@
 #include <vector>
 #include "logger/include/logger/LoggerConfiguration.hpp"
 
-const std::vector<spdlog::sink_ptr> LoggerConfiguration::sinks = {std::make_shared<spdlog::sinks::stdout_sink_mt>()};
+std::vector<spdlog::sink_ptr> LoggerConfiguration::sinks = {};
 

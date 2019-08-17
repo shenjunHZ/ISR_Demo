@@ -12,5 +12,6 @@ namespace applications
 
         virtual int srStartListening() = 0;
         virtual int srStopListening() = 0;
+        virtual void setRegisterNotify(std::function<void(const std::string& result, const bool& isLast)>) = 0;
     };
 } // namespace applications

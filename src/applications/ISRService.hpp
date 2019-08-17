@@ -26,8 +26,9 @@ namespace applications
         int srStartListening() override;
         int srStopListening() override;
 
-        void exitISRService();
         void exitAnalysisMic();
+
+        void setRegisterNotify(std::function<void(const std::string&, const bool&)> registerNotify);
 
     private:
         bool logoutSDK();
@@ -36,15 +37,11 @@ namespace applications
         void destroyRecorder();
         const char* skipSpace(const char* s);
         int updateFormatFromSessionparam(std::string& session_para, WAVEFORMATEX& wavefmt);
-        HANDLE startHelperThread();
-
-        static unsigned int __stdcall helperThreadProc(void* para);
 
         void ISRUninit();
         void endSrOnError(const int& errorCode);
         int uploadUserWords();
         
-        void showKeyHints();
         void waitForRecStop(configuration::ISRRecorder& recorder, unsigned int timeout_ms = -1);
         
         void analysisResult(const std::string& result, const char& isLast);
@@ -64,7 +61,6 @@ namespace applications
         configuration::ISRSpeechRec m_speechRec;
         std::string m_result{};
 
-        static std::vector<HANDLE> m_events;
-        static HANDLE m_helperThreadHandle;
+        std::function<void(const std::string&, const bool&)> registerNotify{};
     };
 } // namespace applications

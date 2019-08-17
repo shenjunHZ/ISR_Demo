@@ -8,6 +8,8 @@
 #include "configurations/ConfigurationLoader.hpp"
 #include "applications/AppConfig.hpp"
 
+#pragma comment(linker, "/subsystem:windows /ENTRY:mainCRTStartup") // cmake 没有生效，设置连接器选项
+
 void parseProgramOptions(int argc, char** argv, boost::program_options::variables_map& cmdParams)
 {
     namespace po = boost::program_options;
@@ -47,14 +49,23 @@ void parseProgramOptions(int argc, char** argv, boost::program_options::variable
     } // namespace po=boost::program_options;
 }
 
+std::string getLogFilePath(const configuration::AppConfiguration& config)
+{
+    if (config.find(configuration::logFilePath) != config.end())
+    {
+        return config[configuration::logFilePath].as<std::string>();
+    }
+    return "";
+}
+
 void runApp(const configuration::AppConfiguration& configParams)
 {
-    auto& logger = logger::getLogger();
+    std::string filePath = getLogFilePath(configParams);
+    auto& logger = logger::getLogger(filePath);
     LOG_INFO_MSG(logger, "Start to run app");
 
     applications::AppInstance appInstance(logger, configParams);
 
-    //std::atomic_bool keepRunning(true);
     appInstance.loopFuction();
 }
 

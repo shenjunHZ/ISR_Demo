@@ -3,6 +3,7 @@
 #include <functional>
 
 #define REGISTER_CONFIG_PREFIX "register"
+#define LOG_CONFIG_PREFIX "log"
 
 namespace configuration
 {
@@ -12,6 +13,8 @@ namespace configuration
     constexpr auto ISRUploadUserWords = REGISTER_CONFIG_PREFIX ".ISRUploadUserWords";
     constexpr auto ISRSessionParams = REGISTER_CONFIG_PREFIX ".ISRSessionParams";
     constexpr auto ISRVadEosParams = REGISTER_CONFIG_PREFIX ".ISRVadEos";
+    
+    constexpr auto logFilePath = LOG_CONFIG_PREFIX ".logFilePath";
 
     // session params according to the sdk
     struct ISRLoginParams

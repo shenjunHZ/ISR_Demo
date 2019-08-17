@@ -23,5 +23,5 @@
 
 namespace logger
 {
-    spdlog::logger& getLogger();
+    spdlog::logger& getLogger(std::string filePath = "");
 } // namespace logger

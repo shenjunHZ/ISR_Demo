@@ -63,6 +63,7 @@ namespace applications
     private:
         void SetErrorMsg(const QString& tipMsg);  
         void UpdateLoginState(bool bLogin);
+        void analysisResult(const std::string& result, const bool& isLast);
 
     private:
         std::unique_ptr<Ui::MainUI>		ui;
