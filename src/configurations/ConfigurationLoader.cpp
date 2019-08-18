@@ -16,6 +16,11 @@ namespace
             (configuration::ISRUploadOn, value<bool>()->default_value(false), "Does need ISR upload on key words")
             (configuration::ISRUploadUserWords, value<std::string>()->default_value("userwords.txt"), "ISR upload user words")
             (configuration::ISRSessionParams, value<std::string>()->default_value("sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding = gb2312"), "ISR session begin params")
+            (configuration::ISRVadEosParams, value<std::string>()->default_value(", vad_eos = 500"), "ISR session begin params")
+            (configuration::gnbCodeRepository, value<std::string>()->default_value("D:/Develop_Code/C-Plane"), "use for open gnb code repository.")
+            (configuration::developmentCodeRepository, value<std::string>()->default_value("D:/Develop_Code/Development"), "use for open development code repository.")
+            (configuration::UMLDocument, value<std::string>()->default_value("D:/Documents/5G----Control_Plane/learning_self"), "use for open uml document directory.")
+            (configuration::featureDocument, value<std::string>()->default_value("D:/Documents/5G----Feature"), "use for open feature document directory.")
             (configuration::logFilePath, value<std::string>()->default_value("./log/logFile.log"), "use for recored logs");
 
         return description;

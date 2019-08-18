@@ -12,6 +12,8 @@
 #include <QtWidgets/QLabel>
 #include <memory>
 #include "applications/ISRService.hpp"
+#include "ControlFunction.hpp"
+#include "configurations/ConfigurationLoader.hpp"
 
 namespace Ui 
 {
@@ -45,7 +47,7 @@ namespace applications
         Q_OBJECT
 
     public:
-        MainUI(IISRService& service, QWidget *parent = 0);
+        MainUI(IISRService& service, const configuration::AppConfiguration& config, QWidget *parent = 0);
         ~MainUI();
 
         int init();
@@ -75,6 +77,7 @@ namespace applications
         QPoint							m_mousePos;
         bool							m_bmousePressed;
         IISRService& m_IISRService;
+        std::unique_ptr<ControlFunction> m_controlFunction{};
     };
 }
 

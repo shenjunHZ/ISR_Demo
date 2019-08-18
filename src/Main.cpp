@@ -82,17 +82,28 @@ int main(int argc, char* argv[])
     }
 
     boost::program_options::variables_map cmdParams;
-    parseProgramOptions(argc, argv, cmdParams);
+    std::string config = "";
+    if (argc > 2)
+    {
+        parseProgramOptions(argc, argv, cmdParams);
+        config = cmdParams["config-file"].as<std::string>();
+    }
+    else
+    {
+        config = "./configuration.ini";
+    }
 
     try
     {
         configuration::AppConfiguration configParams =
-            configuration::loadFromIniFile(cmdParams["config-file"].as<std::string>());
+            configuration::loadFromIniFile(config);
         runApp(configParams);
     }
     catch (const std::exception& e)
     {
         LOG_ERROR_MSG(boost::diagnostic_information(e));
+        std::string t = e.what();
+        std::cerr << "parse config file failed: " << e.what();
         // app.exec();
         appConfig.releaseShareMemory();
         return EXIT_FAILURE;

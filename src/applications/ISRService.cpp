@@ -120,6 +120,7 @@ namespace applications
         m_speechRec.sessionBeginParams = m_sessionBeginParams;
         m_speechRec.notif = std::move(notifier);
 
+        LOG_DEBUG_MSG("session begin params: {}", m_sessionBeginParams);
         updateFormatFromSessionparam(m_sessionBeginParams, wavfmt);
         m_sysRec = std::make_unique<WinRec>(std::make_unique<WAVEFORMATEX>(wavfmt));
 

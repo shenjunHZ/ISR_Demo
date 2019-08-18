@@ -18,10 +18,11 @@ using namespace DSGUI;
 
 namespace applications
 {
-    MainUI::MainUI(IISRService& service, QWidget *parent)
+    MainUI::MainUI(IISRService& service, const configuration::AppConfiguration& config, QWidget *parent)
         : QDialog(parent, Qt::FramelessWindowHint)
         , m_bmousePressed(false)
         , m_IISRService{service}
+        , m_controlFunction{std::make_unique<ControlFunction>(config)}
     {
         ui.reset( new Ui::MainUI() );
         ui->setupUi(this);
@@ -222,6 +223,10 @@ namespace applications
         if (isLast)
         {
             ui->startRecordBtn->setEnabled(true);
+            if (m_controlFunction)
+            {
+                m_controlFunction->analysisResult(result);
+            }
         }
     }
 

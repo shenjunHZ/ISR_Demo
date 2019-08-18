@@ -75,6 +75,8 @@ namespace applications
         std::string sessionParams = prepareISRSessionParams(config);
 
         m_ISRService = std::make_unique<ISRService>(logger, std::move(loginParams), std::move(sessionParams));
+        m_MainUI = std::make_unique<MainUI>(*m_ISRService, config);
+        m_MainUI->init();
 
         initService();
     }
@@ -104,8 +106,6 @@ namespace applications
 
         m_ISRService->ISRAnalysis();
 
-        m_MainUI = std::make_unique<MainUI>(*m_ISRService);
-        m_MainUI->init();
         int dlgCode = m_MainUI->exec();
 
         m_ISRService->exitAnalysisMic();

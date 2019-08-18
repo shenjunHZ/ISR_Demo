@@ -9,6 +9,7 @@ set(SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/applications/AppConfig.cpp
         ${CMAKE_CURRENT_LIST_DIR}/applications/commonControl.cpp
         ${CMAKE_CURRENT_LIST_DIR}/qtApplications/MainUI.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/qtApplications/ControlFunction.cpp
 )
 
 set(HEADERS
@@ -22,6 +23,7 @@ set(HEADERS
         ${CMAKE_CURRENT_LIST_DIR}/applications/AppConfig.hpp
         ${CMAKE_CURRENT_LIST_DIR}/applications/commonControl.hpp
         ${CMAKE_CURRENT_LIST_DIR}/qtApplications/MainUI.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/qtApplications/ControlFunction.hpp
 )
 
 file(GLOB MOCS_HEAD "${CMAKE_CURRENT_LIST_DIR}/qtApplications/*.hpp")

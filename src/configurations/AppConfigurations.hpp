@@ -4,6 +4,7 @@
 
 #define REGISTER_CONFIG_PREFIX "register"
 #define LOG_CONFIG_PREFIX "log"
+#define DIRECTORY_CONFIG_PREFIX "directory"
 
 namespace configuration
 {
@@ -15,6 +16,11 @@ namespace configuration
     constexpr auto ISRVadEosParams = REGISTER_CONFIG_PREFIX ".ISRVadEos";
     
     constexpr auto logFilePath = LOG_CONFIG_PREFIX ".logFilePath";
+
+    constexpr auto gnbCodeRepository = DIRECTORY_CONFIG_PREFIX ".gnbCodeRepository";
+    constexpr auto developmentCodeRepository = DIRECTORY_CONFIG_PREFIX ".developmentCodeRepository";
+    constexpr auto UMLDocument = DIRECTORY_CONFIG_PREFIX ".UMLDocument";
+    constexpr auto featureDocument = DIRECTORY_CONFIG_PREFIX ".featureDocument";
 
     // session params according to the sdk
     struct ISRLoginParams
