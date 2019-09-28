@@ -14,6 +14,9 @@ namespace configuration
     constexpr auto ISRUploadUserWords = REGISTER_CONFIG_PREFIX ".ISRUploadUserWords";
     constexpr auto ISRSessionParams = REGISTER_CONFIG_PREFIX ".ISRSessionParams";
     constexpr auto ISRVadEosParams = REGISTER_CONFIG_PREFIX ".ISRVadEos";
+    constexpr auto ISRProxyEnable = REGISTER_CONFIG_PREFIX ".ISRProxyEnable";
+    constexpr auto ISRProxyIP = REGISTER_CONFIG_PREFIX ".ISRProxyIP";
+    constexpr auto ISRProxyPort = REGISTER_CONFIG_PREFIX ".ISRProxyPort";
     
     constexpr auto logFilePath = LOG_CONFIG_PREFIX ".logFilePath";
 

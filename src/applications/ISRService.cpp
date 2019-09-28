@@ -1,5 +1,6 @@
 #include <fstream>
 #include "ISRService.hpp"
+#include "configurations/ConfigurationLoader.hpp"
 
 #define DEFAULT_INPUT_DEVID     (-1)
 #define E_SR_NOACTIVEDEVICE 1
@@ -11,19 +12,52 @@ namespace
 
     COORD begin_pos = { 0, 0 };
     COORD last_pos = { 0, 0 };
+    const int waitForTimeout = 2;
+
+    bool getISRProxyEnable(const configuration::AppConfiguration& config)
+    {
+        if (config.find(configuration::ISRProxyEnable) != config.end())
+        {
+            return config[configuration::ISRProxyEnable].as<bool>();
+        }
+        return false;
+    }
+
+    std::string getISRProxyIP(const configuration::AppConfiguration& config)
+    {
+        if (config.find(configuration::ISRProxyIP) != config.end())
+        {
+            return config[configuration::ISRProxyIP].as<std::string>();
+        }
+        return "";
+    }
+
+    std::string getISRProxyPort(const configuration::AppConfiguration& config)
+    {
+        if (config.find(configuration::ISRProxyPort) != config.end())
+        {
+            return config[configuration::ISRProxyPort].as<std::string>();
+        }
+        return "";
+    }
 
 } // namespace
 
 namespace applications
 {
     ISRService::ISRService(Logger& logger, configuration::ISRLoginParams& loginParams,
-        std::string& sessionParams)
+        std::string& sessionParams, const configuration::AppConfiguration& config)
         : m_logger{ logger }
         , m_loginParams{ loginParams }
         , m_sessionBeginParams{ sessionParams }
+        , m_uploadParams{"sub = uup, dtt = userword"}
         , m_bLoginSuccess{ false }
     {
-
+        if (getISRProxyEnable(config))
+        {
+            m_sessionBeginParams += getISRProxyIP(config) + getISRProxyPort(config);
+            m_uploadParams += getISRProxyIP(config) + getISRProxyPort(config);
+        }
     }
 
     ISRService::~ISRService()
@@ -259,7 +293,7 @@ namespace applications
         }
 
         int ret = 0;
-        MSPUploadData("userwords", (void*)userwords.c_str(), len, "sub = uup, dtt = userword", &ret); //上传用户词表
+        MSPUploadData("userwords", (void*)userwords.c_str(), len, m_uploadParams.c_str(), &ret); //上传用户词表
         if (MSP_SUCCESS != ret)
         {
             LOG_ERROR_MSG("MSPUploadData failed ! errorCode: {}", ret);
@@ -361,7 +395,7 @@ namespace applications
                 LOG_ERROR_MSG("Stop failed!");
                 return static_cast<int>(configuration::RecordErrorCode::RECORD_ERR_RECORDFAIL);
             }
-            waitForRecStop(m_speechRec.isrRecorder);
+            waitForRecStop(m_speechRec.isrRecorder, waitForTimeout);
         }
         m_speechRec.state = configuration::SRState::SR_STATE_INIT;
         ret = QISRAudioWrite(m_speechRec.sessionId.c_str(), NULL, 0, MSP_AUDIO_SAMPLE_LAST, &m_speechRec.ep_stat, &m_speechRec.rec_stat);

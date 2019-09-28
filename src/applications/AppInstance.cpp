@@ -57,6 +57,7 @@ namespace
         }
         return "";
     }
+
 }
 
 namespace applications
@@ -74,7 +75,7 @@ namespace applications
         //configuration::ISRSessionBeginParams sessionParams;
         std::string sessionParams = prepareISRSessionParams(config);
 
-        m_ISRService = std::make_unique<ISRService>(logger, std::move(loginParams), std::move(sessionParams));
+        m_ISRService = std::make_unique<ISRService>(logger, std::move(loginParams), std::move(sessionParams), config);
         m_MainUI = std::make_unique<MainUI>(*m_ISRService, config);
         m_MainUI->init();
 
@@ -122,6 +123,7 @@ namespace applications
     {
         std::string ISRSessionParams = "";
         ISRSessionParams = getISRSessionParams(config) + getISRVadEosParams(config);
+
         return ISRSessionParams;
     }
 

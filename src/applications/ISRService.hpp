@@ -1,5 +1,6 @@
 #pragma once
 #include "configurations/AppConfigurations.hpp"
+#include "configurations/ConfigurationLoader.hpp"
 #include "logger/Logger.hpp"
 #include "IISRService.hpp"
 #include "WinRec.hpp"
@@ -17,7 +18,7 @@ namespace applications
     {
     public:
         ISRService::ISRService(Logger& logger, configuration::ISRLoginParams& loginParams,
-            std::string& sessionParams);
+            std::string& sessionParams, const configuration::AppConfiguration& config);
         ~ISRService();
 
         bool loginSDK() override;
@@ -55,7 +56,8 @@ namespace applications
     private:
         Logger& m_logger;
         configuration::ISRLoginParams m_loginParams;
-        std::string m_sessionBeginParams;
+        std::string m_sessionBeginParams{};
+        std::string m_uploadParams{};
         bool m_bLoginSuccess;
         std::unique_ptr<ISysRec> m_sysRec{};
         configuration::ISRSpeechRec m_speechRec;
