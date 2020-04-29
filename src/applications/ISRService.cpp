@@ -135,6 +135,7 @@ namespace applications
     {
         int errcode = 0;
         WAVEFORMATEX wavfmt = { WAVE_FORMAT_PCM, 1, 16000, 32000, 2, 16, sizeof(WAVEFORMATEX) };
+        m_sysRec = std::make_unique<WinRec>(std::make_unique<WAVEFORMATEX>(wavfmt));
 
         if (audSrc == configuration::ISRAudsrc::SR_MIC && m_sysRec && m_sysRec->getInputDevNum() == 0)
         {
@@ -156,7 +157,6 @@ namespace applications
 
         LOG_DEBUG_MSG("session begin params: {}", m_sessionBeginParams);
         updateFormatFromSessionparam(m_sessionBeginParams, wavfmt);
-        m_sysRec = std::make_unique<WinRec>(std::make_unique<WAVEFORMATEX>(wavfmt));
 
         if (audSrc == configuration::ISRAudsrc::SR_MIC && m_sysRec)
         {
